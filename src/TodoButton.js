@@ -1,9 +1,12 @@
 import React from "react";
+import './TodoButton.css'
 
-function TodoButton(){
+function TodoButton() {
     return (
-        <button>+</button>
+        <div className="DivbtnAgregar">
+            <button>+</button>
+        </div>
     );
 }
 
-export {TodoButton};
+export { TodoButton };

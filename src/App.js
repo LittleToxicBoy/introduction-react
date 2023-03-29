@@ -9,12 +9,12 @@ import { TodoItem } from "./TodoItem";
 import { TodoButton } from "./TodoButton";
 
 const todos = [
-  { text: 'Cortar Cebolla', colpleted: false },
-  { text: 'Comprar el gas', colpleted: false },
-  { text: 'Hacer la memoria de estadia', colpleted: false },
+  { text: 'Cortar Cebolla', complete: false },
+  { text: 'Comprar el gas', complete: false },
+  { text: 'Hacer la memoria de estadia', complete: true },
 ]
 
-function App() {
+function App(props) {
   return (
     <React.Fragment>
 
@@ -25,7 +25,7 @@ function App() {
 
           <TodoList>
             {todos.map(todo => (
-              <TodoItem key={todo.text} text={todo.text} />
+              <TodoItem complete={todo.complete} text={todo.text} />
             ))}
           </TodoList>
 

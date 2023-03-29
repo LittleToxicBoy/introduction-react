@@ -1,0 +1,26 @@
+.DivbtnAgregar{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.DivbtnAgregar button{
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    background-color: rgb(133, 45, 111);
+    cursor: pointer;
+    font-size: 25px;
+    color: white;
+    border: none;
+}
+
+.DivbtnAgregar button:hover{
+    background-color: rgb(55, 45, 95);
+    transition: .3s;
+}
+
+.DivbtnAgregar button{
+    background-color: rgb(133, 45, 111);
+    transition: .3s;
+}

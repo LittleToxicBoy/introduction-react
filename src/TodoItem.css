@@ -1,0 +1,43 @@
+.listContainerItem{
+    background-color: rgb(42, 42, 88);
+    color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+    display: flex;
+    padding: 15px;
+    justify-content: space-between;
+    border-bottom: 3px solid rgb(204, 48, 204);
+}
+
+.listContainerItemTrue{
+    background-color: rgb(204, 48, 204) !important;
+    border-bottom: 3px solid rgb(42, 42, 88) !important;
+}
+
+.listCIok{
+    display: flex;
+    gap: 10px;
+}
+.listCIok p{
+    margin: 0 !important;
+}
+
+.listContainerItem span{
+    font-size: 20px;
+    color: red;
+    cursor: pointer;
+}
+
+.listContainerItem span:hover{
+    font-size: 30px;
+    transition: .5s;
+}
+
+.listContainerItem span{
+    color: red;
+    transition: .5s;
+}
+
+.listCIok span{
+    color: greenyellow;
+}
