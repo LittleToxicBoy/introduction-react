@@ -1,9 +1,14 @@
 import React from "react";
 import './TodoButton.css'
 
-function TodoButton() {
+function TodoButton(props) {
+    const btnAgregar = (msg)=>{
+        alert(msg);
+    }
+
     return (
-        <div className="DivbtnAgregar">
+        <div className="DivbtnAgregar"
+        onClick={()=> btnAgregar('agregar')}>
             <button>+</button>
         </div>
     );

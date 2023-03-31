@@ -25,7 +25,7 @@ function App(props) {
 
           <TodoList>
             {todos.map(todo => (
-              <TodoItem complete={todo.complete} text={todo.text} />
+              <TodoItem key={todo.text} complete={todo.complete} text={todo.text} />
             ))}
           </TodoList>
 
