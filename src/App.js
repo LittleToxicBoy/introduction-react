@@ -15,20 +15,49 @@ const defaulttodos = [
 ]
 
 function App() {
+  //estados
   const [todos, setTodos] = React.useState(defaulttodos);
   const [searchValue, setSearchValue] = React.useState('');
 
   const completedTodos = todos.filter(todo => !!todo.complete).length;
   const totalTodos = todos.length;
 
+  let seacrhedTodos = todos.length;
+
+  if (searchValue >= 1) {
+    seacrhedTodos = todos;
+  } else {
+    seacrhedTodos = todos.filter(
+      todo => {
+        const todoText = todo.text.toLowerCase();
+        const searchText = searchValue.toLowerCase();
+        return todoText.includes(searchText);
+      }
+    );
+  }
+  //marcar todos como completados
+  const completeTodos = (text) => {
+    const todoIndex = todos.findIndex(todo => todo.text == text);
+    console.log(todoIndex);
+    const newTodos = [...todos];
+    newTodos[todoIndex].complete = true;
+    setTodos(newTodos);
+  }
+
+  //Eliminar un todo
+  const deleteTodos = (text) => {
+    const newT = todos.filter(todo => todo.text != text);
+    setTodos(newT);
+  }
+
   return (
     <React.Fragment>
 
       <div className="divContenedor">
         <div className="Contenido">
-          <TodoCounter 
+          <TodoCounter
             total={totalTodos}
-            completed = {completedTodos}
+            completed={completedTodos}
           />
 
           <TodoSeach
@@ -37,8 +66,14 @@ function App() {
           />
 
           <TodoList>
-            {todos.map(todo => (
-              <TodoItem key={todo.text} complete={todo.complete} text={todo.text} />
+            {seacrhedTodos.map(todo => (
+              <TodoItem
+                key={todo.text}
+                complete={todo.complete}
+                text={todo.text}
+                onComplete={() => completeTodos(todo.text)}
+                onDelete={() => deleteTodos(todo.text)}
+              />
             ))}
           </TodoList>
 
