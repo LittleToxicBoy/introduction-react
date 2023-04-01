@@ -3,47 +3,45 @@
 import React from "react";
 import { AppUI } from "./AppUi";
 
-const defaulttodos = [
-  { text: 'Cortar Cebolla', complete: false },
-  { text: 'Comprar el gas', complete: false },
-  { text: 'Hacer la memoria de estadia', complete: true },
-]
+const defaultTodos = [
+  { text: 'Cortar cebolla', completed: true },
+  { text: 'Tomar el cursso de intro a React', completed: false },
+  { text: 'Llorar con la llorona', completed: true },
+  { text: 'LALALALAA', completed: false },
+];
 
 function App() {
-  //estados
-  const [todos, setTodos] = React.useState(defaulttodos);
+  const [todos, setTodos] = React.useState(defaultTodos);
   const [searchValue, setSearchValue] = React.useState('');
 
-  const completedTodos = todos.filter(todo => !!todo.complete).length;
+  const completedTodos = todos.filter(todo => !!todo.completed).length;
   const totalTodos = todos.length;
 
-  let seacrhedTodos = todos.length;
+  let searchedTodos = [];
 
-  if (searchValue >= 1) {
-    seacrhedTodos = todos;
+  if (!searchValue.length >= 1) {
+    searchedTodos = todos;
   } else {
-    seacrhedTodos = todos.filter(
-      todo => {
-        const todoText = todo.text.toLowerCase();
-        const searchText = searchValue.toLowerCase();
-        return todoText.includes(searchText);
-      }
-    );
-  }
-  //marcar todos como completados
-  const completeTodos = (text) => {
-    const todoIndex = todos.findIndex(todo => todo.text == text);
-    console.log(todoIndex);
-    const newTodos = [...todos];
-    newTodos[todoIndex].complete = true;
-    setTodos(newTodos);
+    searchedTodos = todos.filter(todo => {
+      const todoText = todo.text.toLowerCase();
+      const searchText = searchValue.toLowerCase();
+      return todoText.includes(searchText);
+    });
   }
 
-  //Eliminar un todo
-  const deleteTodos = (text) => {
-    const newT = todos.filter(todo => todo.text != text);
-    setTodos(newT);
-  }
+  const completeTodo = (text) => {
+    const todoIndex = todos.findIndex(todo => todo.text === text);
+    const newTodos = [...todos];
+    newTodos[todoIndex].completed = true;
+    setTodos(newTodos);
+  };
+
+  const deleteTodo = (text) => {
+    const todoIndex = todos.findIndex(todo => todo.text === text);
+    const newTodos = [...todos];
+    newTodos.splice(todoIndex, 1);
+    setTodos(newTodos);
+  };
 
   return (
     <AppUI
@@ -51,9 +49,9 @@ function App() {
       completedTodos={completedTodos}
       searchValue={searchValue}
       setSearchValue={setSearchValue}
-      seacrhedTodos={seacrhedTodos}
-      completeTodos={completeTodos}
-      deleteTodos={deleteTodos}
+      searchedTodos={searchedTodos}
+      completeTodo={completeTodo}
+      deleteTodo={deleteTodo}
     />
   );
 }

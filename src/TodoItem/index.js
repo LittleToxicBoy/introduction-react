@@ -3,7 +3,7 @@ import './TodoItem.css';
 
 function TodoItem(props) {
     return (
-        <li className={`listContainerItem ${props.complete && 'listContainerItemTrue'}`}>
+        <li className={`listContainerItem ${props.completed && 'listContainerItemTrue'}`}>
             <div className="listCIok">
                 <span onClick={props.onComplete}>o</span>
                 <p>{props.text}</p>
