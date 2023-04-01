@@ -1,12 +1,7 @@
 // import logo from './logo.svg';
 // import './App.css';
-
 import React from "react";
-import { TodoCounter } from './TodoCounter';
-import { TodoSeach } from "./TodoSearch";
-import { TodoList } from "./TodoList";
-import { TodoItem } from "./TodoItem";
-import { TodoButton } from "./TodoButton";
+import { AppUI } from "./AppUi";
 
 const defaulttodos = [
   { text: 'Cortar Cebolla', complete: false },
@@ -51,37 +46,15 @@ function App() {
   }
 
   return (
-    <React.Fragment>
-
-      <div className="divContenedor">
-        <div className="Contenido">
-          <TodoCounter
-            total={totalTodos}
-            completed={completedTodos}
-          />
-
-          <TodoSeach
-            searchValue={searchValue}
-            setSearchValue={setSearchValue}
-          />
-
-          <TodoList>
-            {seacrhedTodos.map(todo => (
-              <TodoItem
-                key={todo.text}
-                complete={todo.complete}
-                text={todo.text}
-                onComplete={() => completeTodos(todo.text)}
-                onDelete={() => deleteTodos(todo.text)}
-              />
-            ))}
-          </TodoList>
-
-          <TodoButton />
-        </div>
-      </div>
-
-    </React.Fragment>
+    <AppUI
+      totalTodos={totalTodos}
+      completedTodos={completedTodos}
+      searchValue={searchValue}
+      setSearchValue={setSearchValue}
+      seacrhedTodos={seacrhedTodos}
+      completeTodos={completeTodos}
+      deleteTodos={deleteTodos}
+    />
   );
 }
 
