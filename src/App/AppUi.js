@@ -17,7 +17,13 @@ function AppUI() {
                     <TodoSeach />
 
                     <TodoContex.Consumer>
-                        {({error, loading, searchedTodos, completeTodo, deleteTodo}) => {
+                        {({
+                            error,
+                            loading,
+                            searchedTodos,
+                            completeTodo,
+                            deleteTodo
+                        }) => (
                             <TodoList>
                                 {loading && <p>Cargando Papu</p>}
                                 {error && <p>Hubo un error papu</p>}
@@ -33,7 +39,7 @@ function AppUI() {
                                     />
                                 ))}
                             </TodoList>
-                        }}
+                        )}
                     </TodoContex.Consumer>
 
                     <TodoButton />

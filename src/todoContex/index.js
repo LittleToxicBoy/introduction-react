@@ -1,5 +1,5 @@
 import React from "react";
-import {useLocalStorage} from "./useLocalStorage";
+import { useLocalStorage } from "./useLocalStorage";
 
 const TodoContex = React.createContext();
 
@@ -60,4 +60,4 @@ function TodoProvider(props) {
     );
 }
 
-export {TodoContex, TodoProvider};
+export { TodoContex, TodoProvider };
