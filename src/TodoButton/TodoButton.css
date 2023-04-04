@@ -2,9 +2,11 @@
     width: 100%;
     display: flex;
     justify-content: end;
+    z-index: 20;
 }
 
 .DivbtnAgregar button{
+    transition: .3s;
     height: 40px;
     width: 40px;
     border-radius: 20px;
@@ -17,10 +19,5 @@
 
 .DivbtnAgregar button:hover{
     background-color: rgb(55, 45, 95);
-    transition: .3s;
-}
-
-.DivbtnAgregar button{
-    background-color: rgb(133, 45, 111);
     transition: .3s;
 }

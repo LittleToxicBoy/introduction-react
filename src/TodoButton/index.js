@@ -2,13 +2,13 @@ import React from "react";
 import './TodoButton.css'
 
 function TodoButton(props) {
-    const btnAgregar = (msg)=>{
-        alert(msg);
+    const btnAgregar = () => {
+        props.setOpenModal(true);
     }
 
     return (
         <div className="DivbtnAgregar"
-        onClick={()=> btnAgregar('agregar')}>
+            onClick={btnAgregar}>
             <button>+</button>
         </div>
     );
