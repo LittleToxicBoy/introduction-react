@@ -6,6 +6,7 @@ import { TodoList } from "../TodoList";
 import { TodoItem } from "../TodoItem";
 import { TodoButton } from "../TodoButton";
 import { Modal } from "../modal";
+import { TodoForm } from "../modal/todoForm";
 
 function AppUI() {
     const {
@@ -42,7 +43,7 @@ function AppUI() {
 
                     {!!openModal && (
                         <Modal setCloseModal={setOpenModal}>
-                            <p>papu</p>
+                            <TodoForm></TodoForm>
                         </Modal>
                     )}
 
