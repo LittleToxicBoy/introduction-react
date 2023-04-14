@@ -8,6 +8,7 @@ import { TodoButton } from "../TodoButton";
 import { Modal } from "../modal";
 import { TodoForm } from "../modal/todoForm";
 import { Loading } from "../animacionLoading";
+import { PrimerTodo } from "../todoFirst";
 
 function AppUI() {
     const {
@@ -29,7 +30,7 @@ function AppUI() {
                     <TodoList>
                         {loading && <Loading/>}
                         {error && <p>Hubo un error papu</p>}
-                        {(!loading && !searchedTodos.length) && <p>Crea tu primer todo</p>}
+                        {(!loading && !searchedTodos.length) && <PrimerTodo/>}
 
                         {searchedTodos.map(todo => (
                             <TodoItem

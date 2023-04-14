@@ -1,0 +1,20 @@
+.divFisrtTodo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}
+
+.divFisrtTodo img{
+    height: 200px;
+    width: fit-content;
+    filter: opacity(0.5);
+    position: relative;
+}
+
+.divFisrtTodo h4{
+    position: absolute;
+    color: #F8F9F9;
+    font-size: large;
+}
