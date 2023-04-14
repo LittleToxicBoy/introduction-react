@@ -7,12 +7,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.divContenedor{
+.divContenedor {
   min-height: 950px;
-  background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/40963d13-8fce-4241-9bbc-d806dd52eebb/da930dm-759acd28-590b-4c2b-99f2-ebf7b7798008.jpg/v1/fill/w_1600,h_900,q_75,strp/anime_ecchi_bunny_by_atndesign_da930dm-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9OTAwIiwicGF0aCI6IlwvZlwvNDA5NjNkMTMtOGZjZS00MjQxLTliYmMtZDgwNmRkNTJlZWJiXC9kYTkzMGRtLTc1OWFjZDI4LTU5MGItNGMyYi05OWYyLWViZjdiNzc5ODAwOC5qcGciLCJ3aWR0aCI6Ijw9MTYwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.t36Zj4tkJVhyX_TLUTjFFebje29IRIMg4CDG_IXhvUo);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+  background-color: #17202A;
   /* filter: opacity(80%); */
   display: flex;
   flex-direction: column;
@@ -21,14 +18,33 @@ body {
   z-index: 3;
 }
 
-.Contenido{
+.Contenido {
   z-index: 10 !important;
   background-color: #17202A;
   columns: #FFF;
-  min-width: 400px;
-  padding: 20px;
+  width: 340px;
   border-radius: 12px;
+  padding: 14px;
+  min-height: 500px;
+
+  border: 2px solid transparent;
+  animation: Contenido 2s infinite;
 }
+
+@keyframes Contenido {
+  0% {
+    border-color: #FF00FF;
+  }
+
+  25% {
+    border-color: #00FFFF;
+  }
+
+  100% {
+    border-color: #FF00FF;
+  }
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

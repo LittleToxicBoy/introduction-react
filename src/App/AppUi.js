@@ -7,6 +7,7 @@ import { TodoItem } from "../TodoItem";
 import { TodoButton } from "../TodoButton";
 import { Modal } from "../modal";
 import { TodoForm } from "../modal/todoForm";
+import { Loading } from "../animacionLoading";
 
 function AppUI() {
     const {
@@ -26,7 +27,7 @@ function AppUI() {
                     <TodoCounter />
                     <TodoSeach />
                     <TodoList>
-                        {loading && <p>Cargando Papu</p>}
+                        {loading && <Loading/>}
                         {error && <p>Hubo un error papu</p>}
                         {(!loading && !searchedTodos.length) && <p>Crea tu primer todo</p>}
 
