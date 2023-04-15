@@ -5,10 +5,12 @@ function TodoItem(props) {
     return (
         <li className={`listContainerItem ${props.completed && 'listContainerItemTrue'}`}>
             <div className="listCIok">
-                <span onClick={props.onComplete}>o</span>
                 <p>{props.text}</p>
             </div>
-            <span onClick={props.onDelete}>X</span>
+            <div className="spans">
+                <span className="titulo-neon complete" onClick={props.onComplete}>OK</span>
+                <span className="titulo-neon delete" onClick={props.onDelete}>X</span>
+            </div>
         </li>
     );
 }

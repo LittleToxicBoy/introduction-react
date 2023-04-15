@@ -11,7 +11,7 @@ function Modal({ children, setCloseModal }) {
         <div className="modal">
             <div className="boxModal">
                 {children}
-                <div className="btnCerrar" onClick={btnCerrar}>
+                <div className="btnCerrar" onClick={btnCerrar} hidden>
                     Cerrar
                 </div>
             </div>

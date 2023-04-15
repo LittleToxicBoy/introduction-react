@@ -1,4 +1,4 @@
-.listContainerItem{
+.listContainerItem {
     background-color: rgb(42, 42, 88);
     color: white;
     border-radius: 10px;
@@ -6,38 +6,56 @@
     display: flex;
     padding: 15px;
     justify-content: space-between;
-    border-bottom: 3px solid rgb(204, 48, 204);
+    display: flex;
+    align-items: center;
 }
 
-.listContainerItemTrue{
-    background-color: rgb(204, 48, 204) !important;
-    border-bottom: 3px solid rgb(42, 42, 88) !important;
+.listContainerItemTrue {
+    background-color: #566573 !important;
 }
 
-.listCIok{
+.listCIok {
     display: flex;
     gap: 10px;
+    align-items: center;
 }
-.listCIok p{
+
+.listCIok p {
     margin: 0 !important;
 }
 
-.listContainerItem span{
-    font-size: 20px;
-    color: red;
+.spans{
+    display: flex;
+    gap: 10px;
+}
+
+.spans .complete{
+    color: #48C9B0;
+}
+
+.spans .delete{
+    color: #EC7063;
+}
+
+.titulo-neon {
     cursor: pointer;
+    font-size: 18px;
 }
 
-.listContainerItem span:hover{
-    font-size: 30px;
-    transition: .5s;
+.titulo-neon:hover {
+    animation: coloresHover 2s linear infinite;
 }
 
-.listContainerItem span{
-    color: red;
-    transition: .5s;
-}
+@keyframes coloresHover {
+    0% {
+        color: #FF00FF;
+    }
 
-.listCIok span{
-    color: greenyellow;
+    25% {
+        color: #00FFFF;
+    }
+
+    100% {
+        color: #FF00FF;
+    }
 }
