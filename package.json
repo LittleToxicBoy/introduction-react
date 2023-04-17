@@ -2,7 +2,7 @@
   "name": "introduction-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://littletoxicboy.github.io/introduction-react",
+  "homepage": "http://LittleToxicBoy.github.io/introduction-react",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
